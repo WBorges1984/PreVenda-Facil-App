@@ -1,0 +1,37 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 357
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object ButtonEnviar: TButton
+    Position.X = 104.000000000000000000
+    Position.Y = 160.000000000000000000
+    TabOrder = 3
+    Text = 'ButtonEnviar'
+    TextSettings.Trimming = None
+    OnClick = ButtonEnviarClick
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 32
+    Top = 400
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 128
+    Top = 408
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 248
+    Top = 392
+  end
+end
