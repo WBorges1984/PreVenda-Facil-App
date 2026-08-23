@@ -6,7 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, REST.Types,
   FMX.Controls.Presentation, FMX.StdCtrls, REST.Client, Data.Bind.Components,
-  Data.Bind.ObjectScope, System.JSON;
+  Data.Bind.ObjectScope, System.JSON, FireDAC.Comp.Client, Data.DB,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
+  FMX.ListView;
 
 type
   TForm1 = class(TForm)
@@ -14,7 +16,10 @@ type
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     ButtonEnviar: TButton;
+    ListView1: TListView;
+    Button1: TButton;
     procedure ButtonEnviarClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,6 +33,83 @@ implementation
 
 {$R *.fmx}
 
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  Client: TRESTClient;
+  Request: TRESTRequest;
+  Response: TRESTResponse;
+  JSONProdutos: TJSONArray;
+  ProdutoItem: TJSONObject;
+  I: Integer;
+  Descricao: string;
+  Preco: Double;
+  ItemLista: TListViewItem;
+begin
+  // ATENÇÃO: Lembre-se de colocar o IP real do seu computador na rede
+  Client := TRESTClient.Create('http://192.168.100.5:9000/produtos');
+
+  // 1. Evita que o app falhe silenciosamente caso o servidor retorne erro
+  Client.RaiseExceptionOn500 := False;
+
+  Request := TRESTRequest.Create(nil);
+  Response := TRESTResponse.Create(nil);
+
+  try
+    Request.Client := Client;
+    Request.Response := Response;
+    Request.Method := rmGET;
+
+    try
+      Request.Execute;
+
+      if Response.StatusCode = 200 then
+      begin
+        JSONProdutos := Response.JSONValue as TJSONArray;
+
+        // 2. Limpa o ListView antes de popular novamente
+        ListView1.Items.Clear;
+
+        // Congela o desenho do ListView para preencher os itens mais rápido
+        ListView1.BeginUpdate;
+        try
+          for I := 0 to JSONProdutos.Count - 1 do
+          begin
+            ProdutoItem := JSONProdutos.Items[I] as TJSONObject;
+
+            Descricao := ProdutoItem.GetValue<string>('descricao');
+            Preco := ProdutoItem.GetValue<Double>('preco');
+
+            // 3. Cria um novo item na lista visual
+            ItemLista := ListView1.Items.Add;
+            ItemLista.Text := Descricao;
+            ItemLista.Detail := 'R$ ' + FormatFloat(',0.00', Preco);
+
+            // Opcional: Se quiser guardar o CD_PRODUTO de forma oculta
+            // para usar na hora de mandar o pedido, use a propriedade TagString
+            ItemLista.TagString := ProdutoItem.GetValue<string>('codigo');
+          end;
+        finally
+          ListView1.EndUpdate; // Libera a tela para desenhar tudo de uma vez
+        end;
+
+        ShowMessage(JSONProdutos.Count.ToString + ' produtos carregados do DBF!');
+      end
+      else
+      begin
+        ShowMessage('Erro do Servidor: ' + Response.Content);
+      end;
+    except
+      on E: Exception do
+        ShowMessage('Erro ao conectar no servidor: ' + E.Message);
+    end;
+
+  finally
+    Request.Free;
+    Response.Free;
+    Client.Free;
+  end;
+end;
+
 procedure TForm1.ButtonEnviarClick(Sender: TObject);
 var
   Client: TRESTClient;
@@ -38,7 +120,8 @@ var
 begin
   // ATENÇÃO: No Android, 'localhost' ou '127.0.0.1' apontam para o próprio celular!
   // Coloque o IP da sua máquina na rede local (ex: 192.168.0.15)
-  Client := TRESTClient.Create('http://SEU_IP_AQUI:9000/pedidos');
+  Client := TRESTClient.Create('http://192.168.100.5:9000/pedidos');
+  Client.RaiseExceptionOn500 := False;
   Request := TRESTRequest.Create(nil);
   Response := TRESTResponse.Create(nil);
   JSONPedido := TJSONObject.Create;
