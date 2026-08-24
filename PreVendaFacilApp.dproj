@@ -4,11 +4,12 @@
         <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>PreVendaFacilApp.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">PreVendaFacilApp</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -236,7 +237,7 @@
                     <Source Name="MainSource">PreVendaFacilApp.dpr</Source>
                 </Source>
             </Delphi.Personality>
-            <Deployment Version="5">
+            <Deployment Version="4">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -869,6 +870,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android64\Debug\PreVendaFacilApp.classes" Configuration="Debug" Class="AndroidClasses">
+                    <Platform Name="Android64">
+                        <Operation>64</Operation>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\colors-night-v21.xml" Configuration="Debug" Class="Android_ColorsDark">
                     <Platform Name="Android64">
                         <RemoteName>colors.xml</RemoteName>
@@ -941,6 +948,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android64\Release\PreVendaFacilApp.classes" Configuration="Release" Class="AndroidClasses">
+                    <Platform Name="Android64">
+                        <Operation>64</Operation>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Release\colors-night-v21.xml" Configuration="Release" Class="Android_ColorsDark">
                     <Platform Name="Android64">
                         <RemoteName>colors.xml</RemoteName>
@@ -1010,6 +1023,12 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
                     <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Android\Debug\PreVendaFacilApp.classes" Configuration="Debug" Class="AndroidClasses">
+                    <Platform Name="Android">
+                        <Operation>64</Operation>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1163,6 +1182,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -2107,8 +2136,6 @@
             <Platforms>
                 <Platform value="Android">True</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>

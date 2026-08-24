@@ -13,6 +13,7 @@ object Form1: TForm1
     Position.Y = 64.000000000000000000
     TabOrder = 3
     Text = 'ButtonEnviar'
+    TextSettings.Trimming = None
     OnClick = ButtonEnviarClick
   end
   object ListView1: TListView
@@ -32,6 +33,7 @@ object Form1: TForm1
     Position.Y = 296.000000000000000000
     TabOrder = 9
     Text = 'Button1'
+    TextSettings.Trimming = None
     OnClick = Button1Click
   end
   object RESTClient1: TRESTClient

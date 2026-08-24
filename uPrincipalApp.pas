@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.StdCtrls, REST.Client, Data.Bind.Components,
   Data.Bind.ObjectScope, System.JSON, FireDAC.Comp.Client, Data.DB,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.ListView;
+  FMX.ListView, System.Generics.Collections;
 
 type
   TForm1 = class(TForm)
@@ -22,6 +22,7 @@ type
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
+
   public
     { Public declarations }
   end;
@@ -32,6 +33,7 @@ var
 implementation
 
 {$R *.fmx}
+
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
@@ -46,7 +48,8 @@ var
   ItemLista: TListViewItem;
 begin
   // ATENÇÃO: Lembre-se de colocar o IP real do seu computador na rede
-  Client := TRESTClient.Create('http://192.168.100.5:9000/produtos');
+  //Client := TRESTClient.Create('http://192.168.100.5:9000/produtos');
+  Client := TRESTClient.Create('http://10.1.1.110:9000/produtos');
 
   // 1. Evita que o app falhe silenciosamente caso o servidor retorne erro
   Client.RaiseExceptionOn500 := False;
@@ -120,7 +123,8 @@ var
 begin
   // ATENÇÃO: No Android, 'localhost' ou '127.0.0.1' apontam para o próprio celular!
   // Coloque o IP da sua máquina na rede local (ex: 192.168.0.15)
-  Client := TRESTClient.Create('http://192.168.100.5:9000/pedidos');
+  //Client := TRESTClient.Create('http://192.168.100.5:9000/pedidos');
+  Client := TRESTClient.Create('http://10.1.1.110:9000/pedidos');
   Client.RaiseExceptionOn500 := False;
   Request := TRESTRequest.Create(nil);
   Response := TRESTResponse.Create(nil);

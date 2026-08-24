@@ -6,8 +6,6 @@
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'">RQ8NA09NWJL</DeviceId>
         <DeviceId Condition="'$(Platform)'=='Android64'">RQ8NA09NWJL</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
-        <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'"/>
     <ItemGroup Condition="'$(Platform)'=='Android64'">
@@ -61,6 +59,15 @@
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android64\Debug\PreVendaFacilApp.classes" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PreVendaFacilApp\classes\</RemoteDir>
+            <RemoteName>PreVendaFacilApp.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -187,6 +194,15 @@
             <RemoteName>ic_launcher.xml</RemoteName>
             <DeployClass>Android_AdaptiveIcon</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android64\Release\PreVendaFacilApp.classes" Condition="'$(Config)'=='Release'">
+            <RemoteDir>PreVendaFacilApp\classes\</RemoteDir>
+            <RemoteName>PreVendaFacilApp.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -1331,6 +1347,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Debug\PreVendaFacilApp.classes" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>PreVendaFacilApp\classes\</RemoteDir>
+            <RemoteName>PreVendaFacilApp.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>PreVendaFacilApp\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
@@ -1406,6 +1431,4 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win64'"/>
     <ItemGroup Condition="'$(Platform)'=='Win64x'"/>
-    <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
-    <ItemGroup Condition="'$(Platform)'=='iOSSimARM64'"/>
 </Project>
