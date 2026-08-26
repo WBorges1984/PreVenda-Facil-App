@@ -21,11 +21,11 @@ type
     Label2: TLabel;
     Rectangle2: TRectangle;
     Image2: TImage;
-    Edit1: TEdit;
+    EditUsuario: TEdit;
     StyleBook1: TStyleBook;
     Rectangle3: TRectangle;
     Image3: TImage;
-    Edit2: TEdit;
+    EditSenha: TEdit;
     Label3: TLabel;
     btnLogin: TSpeedButton;
     recBtnLogin: TRectangle;
@@ -52,8 +52,63 @@ implementation
 
 
 procedure TForm1.btnLoginClick(Sender: TObject);
+var
+  Client: TRESTClient;
+  Request: TRESTRequest;
+  Response: TRESTResponse;
+  JSONEnvio: TJSONObject;
 begin
-  ShowMessage('Danilo');
+  if (EditUsuario.Text = '') or (EditSenha.Text = '') then
+  begin
+    ShowMessage('Preencha usuário e senha!');
+    Exit;
+  end;
+
+  Client := TRESTClient.Create('http://192.168.100.5:9000/login');
+  Client.RaiseExceptionOn500 := False; // Importante para lermos o erro
+  Request := TRESTRequest.Create(nil);
+  Response := TRESTResponse.Create(nil);
+  JSONEnvio := TJSONObject.Create;
+
+  try
+    Request.Client := Client;
+    Request.Response := Response;
+    Request.Method := rmPOST;
+
+    // Prepara os dados que o usuário digitou
+    JSONEnvio.AddPair('usuario', EditUsuario.Text);
+    JSONEnvio.AddPair('senha', EditSenha.Text);
+    Request.AddBody(JSONEnvio.ToString, ctAPPLICATION_JSON);
+
+    try
+      Request.Execute;
+
+      if Response.StatusCode = 200 then
+      begin
+        // Login com sucesso!
+        ShowMessage('Bem-vindo, ' + EditUsuario.Text + '!');
+
+        // Aqui você esconde a tela de login e mostra a tela do catálogo/carrinho
+        // Exemplo:
+        // TabControl1.ActiveTab := TabCatalogo;
+      end
+      else
+      begin
+        // Erro de usuário ou senha (Erro 401 que devolvemos do servidor)
+        //ShowMessage('Acesso Negado: ' + Response.JSONValue.GetValue<string>('mensagem'));
+        ShowMessage('Erro do servidor: ' + Response.Content);
+      end;
+    except
+      on E: Exception do
+        ShowMessage('Erro de conexão com o servidor: ' + E.Message);
+    end;
+
+  finally
+    JSONEnvio.Free;
+    Request.Free;
+    Response.Free;
+    Client.Free;
+  end;
 end;
 
 procedure TForm1.btnLoginMouseEnter(Sender: TObject);

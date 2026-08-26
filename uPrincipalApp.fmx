@@ -8802,7 +8802,7 @@ object Form1: TForm1
               Size.Height = 33.000000000000000000
               Size.PlatformDefault = False
             end
-            object Edit1: TEdit
+            object EditUsuario: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Center
               StyleLookup = 'Edit1Style1'
@@ -8811,6 +8811,7 @@ object Form1: TForm1
               Size.Width = 220.000000000000000000
               Size.Height = 32.000000000000000000
               Size.PlatformDefault = False
+              CharCase = ecUpperCase
             end
           end
           object Rectangle3: TRectangle
@@ -9201,7 +9202,7 @@ object Form1: TForm1
               Size.Height = 33.000000000000000000
               Size.PlatformDefault = False
             end
-            object Edit2: TEdit
+            object EditSenha: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Center
               StyleLookup = 'Edit1Style1'
@@ -9210,6 +9211,7 @@ object Form1: TForm1
               Size.Width = 220.000000000000000000
               Size.Height = 32.000000000000000000
               Size.PlatformDefault = False
+              CharCase = ecUpperCase
             end
           end
         end
