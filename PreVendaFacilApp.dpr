@@ -3,12 +3,14 @@ program PreVendaFacilApp;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uPrincipalApp in 'uPrincipalApp.pas' {Form1};
+  uLogin in 'uLogin.pas' {frmLogin},
+  uBalcao in 'uBalcao.pas' {frmBalcao},
+  uConfiguracao in 'uConfiguracao.pas' {frmConfiguracao};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmBalcao, frmBalcao);
   Application.Run;
 end.
