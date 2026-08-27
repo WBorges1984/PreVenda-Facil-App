@@ -1,7 +1,6 @@
-object frmBalcao: TfrmBalcao
+object frmPesquisaProduto: TfrmPesquisaProduto
   Left = 0
   Top = 0
-  Caption = 'Form2'
   ClientHeight = 688
   ClientWidth = 348
   Fill.Kind = Solid
@@ -9,8 +8,6 @@ object frmBalcao: TfrmBalcao
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnCreate = FormCreate
-  OnDestroy = FormDestroy
   DesignerMasterStyle = 0
   object layTop: TLayout
     Align = Top
@@ -946,217 +943,58 @@ object frmBalcao: TfrmBalcao
         TextSettings.Font.Size = 20.000000000000000000
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         TextSettings.HorzAlign = Center
-        Text = 'BALC'#195'O DE VENDAS'
+        Text = 'Pesquisa de Produtos'
         TabOrder = 0
       end
     end
   end
-  object layContent: TLayout
-    Align = Client
+  object Layout1: TLayout
+    Align = Top
+    Position.Y = 50.000000000000000000
     Size.Width = 348.000000000000000000
-    Size.Height = 638.000000000000000000
+    Size.Height = 31.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object Layout1: TLayout
-      Align = Top
-      Size.Width = 348.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
+    object EditBusca: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 0
-      object Rectangle1: TRectangle
-        Align = Contents
-        Size.Width = 348.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-      end
-      object layDesc: TLayout
-        Align = Left
-        Size.Width = 123.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        object Label2: TLabel
-          Align = Client
-          Size.Width = 123.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.HorzAlign = Center
-          Text = 'DESCRI'#199#195'O'
-          TabOrder = 0
-        end
-      end
-      object layUni: TLayout
-        Align = Left
-        Position.X = 123.000000000000000000
-        Size.Width = 36.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        object Label3: TLabel
-          Align = Client
-          Size.Width = 36.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.HorzAlign = Center
-          Text = 'UN'
-          TabOrder = 0
-        end
-      end
-      object layVlUni: TLayout
-        Align = Left
-        Position.X = 193.000000000000000000
-        Size.Width = 65.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object Label4: TLabel
-          Align = Client
-          Size.Width = 65.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.HorzAlign = Center
-          Text = 'VL. UNI'
-          TabOrder = 0
-        end
-      end
-      object layTot: TLayout
-        Align = Client
-        Size.Width = 90.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        object Label5: TLabel
-          Align = Client
-          Size.Width = 90.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.HorzAlign = Center
-          Text = 'VL.TOTAL'
-          TabOrder = 0
-        end
-      end
-      object layQTD: TLayout
-        Align = Left
-        Position.X = 159.000000000000000000
-        Size.Width = 34.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 4
-        object Label6: TLabel
-          Align = Client
-          Size.Width = 34.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.HorzAlign = Center
-          Text = 'QTD'
-          TabOrder = 0
-        end
-      end
-    end
-    object Layout4: TLayout
-      Align = Top
-      Position.Y = 266.000000000000000000
-      Size.Width = 348.000000000000000000
-      Size.Height = 39.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-      object Button1: TButton
-        Align = Center
-        Size.Width = 161.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        Text = 'Adicionar Produtos'
-        TextSettings.Trimming = None
-        OnClick = Button1Click
-      end
-    end
-    object ListView1: TListView
-      ItemAppearanceClassName = 'TDynamicAppearance'
-      ItemEditAppearanceClassName = 'TDynamicAppearance'
-      HeaderAppearanceClassName = 'TListHeaderObjects'
-      FooterAppearanceClassName = 'TListHeaderObjects'
-      OnUpdateObjects = ListView1UpdateObjects
-      Align = Top
-      Position.Y = 33.000000000000000000
-      Size.Width = 348.000000000000000000
-      Size.Height = 233.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      ItemAppearance.ItemEditHeight = 60
-      ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
-        item
-          AppearanceObjectName = 'txtDesc'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.Width = 114.000000000000000000
-          Appearance.Height = 28.000000000000000000
-          Appearance.PlaceOffset.Y = 21.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'txtUn'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.Width = 37.000000000000000000
-          Appearance.Height = 28.000000000000000000
-          Appearance.PlaceOffset.X = 113.000000000000000000
-          Appearance.PlaceOffset.Y = 21.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'txtQTD'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.Width = 33.000000000000000000
-          Appearance.Height = 28.000000000000000000
-          Appearance.PlaceOffset.X = 150.000000000000000000
-          Appearance.PlaceOffset.Y = 21.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'txtVlUni'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.Width = 65.000000000000000000
-          Appearance.Height = 28.000000000000000000
-          Appearance.PlaceOffset.X = 182.000000000000000000
-          Appearance.PlaceOffset.Y = 21.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'txtVlTotal'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.Width = 81.000000000000000000
-          Appearance.Height = 28.000000000000000000
-          Appearance.PlaceOffset.X = 246.000000000000000000
-          Appearance.PlaceOffset.Y = 21.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'txtCodigo'
-          AppearanceClassName = 'TTextObjectAppearance'
-          Appearance.TextAlign = Leading
-          Appearance.TextVertAlign = Trailing
-          Appearance.Width = 175.000000000000000000
-          Appearance.Height = 16.000000000000000000
-          Appearance.PlaceOffset.Y = 1.000000000000000000
-        end
-        item
-          AppearanceObjectName = 'bgFundo'
-          AppearanceClassName = 'TImageObjectAppearance'
-          Appearance.Align = Center
-        end>
-      ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
-        item
-          AppearanceObjectName = 'Text1'
-          AppearanceClassName = 'TTextObjectAppearance'
-        end>
-      ItemAppearanceObjects.FooterObjects.Text.Width = 327.000000000000000000
-      ItemAppearanceObjects.FooterObjects.Text.Height = 16.000000000000000000
-      ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.Y = 22.000000000000000000
-    end
-    object Image2: TImage
-      MultiResBitmap = <
-        item
-        end>
       Position.X = 8.000000000000000000
-      Position.Y = 328.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 209.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
     end
   end
-  object ActionList1: TActionList
-    Left = 568
-    Top = 304
+  object Layout4: TLayout
+    Align = Top
+    Position.Y = 81.000000000000000000
+    Size.Width = 348.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object ButtonBuscar: TButton
+      Position.X = 11.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'ButtonBuscar'
+      TextSettings.Trimming = None
+      OnClick = ButtonBuscarClick
+    end
+  end
+  object ListViewResultados: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemDeleteAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Top
+    Position.Y = 113.000000000000000000
+    Size.Width = 348.000000000000000000
+    Size.Height = 328.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    OnItemClick = ListViewResultadosItemClick
   end
 end
