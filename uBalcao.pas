@@ -5,7 +5,9 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView.Types,
+  FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
+  System.Actions, FMX.ActnList;
 
 type
   TfrmBalcao = class(TForm)
@@ -26,6 +28,8 @@ type
     Label5: TLabel;
     layQTD: TLayout;
     Label6: TLabel;
+    ActionList1: TActionList;
+    ListView1: TListView;
   private
     { Private declarations }
   public
