@@ -50,8 +50,8 @@ var
   I: Integer;
   Item: TListViewItem;
 begin
-  //Client := TRESTClient.Create('http://192.168.100.5:9000/produtos');
-  Client := TRESTClient.Create('http://10.1.1.111:9000/produtos');
+  Client := TRESTClient.Create('http://192.168.100.7:9000/produtos');
+  //Client := TRESTClient.Create('http://10.1.1.111:9000/produtos');
   Request := TRESTRequest.Create(nil);
   Response := TRESTResponse.Create(nil);
 
@@ -90,8 +90,10 @@ begin
           Item.Data['unidade'] := JSONProduto.GetValue<string>('unidade');
           Item.Data['preco'] := JSONProduto.GetValue<Double>('preco').ToString;
         end;
+        frmBalcao.imgBgList.Visible := false;
       finally
         ListViewResultados.EndUpdate;
+
       end;
     end
     else

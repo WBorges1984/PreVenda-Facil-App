@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView.Types,
   FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
-  System.Actions, FMX.ActnList;
+  System.Actions, FMX.ActnList, FMX.ListBox, FMX.Edit, FMX.Memo.Types,
+  FMX.ScrollBox, FMX.Memo;
 
 type
   TfrmBalcao = class(TForm)
@@ -17,7 +18,7 @@ type
     Image1: TImage;
     Label1: TLabel;
     layContent: TLayout;
-    Layout1: TLayout;
+    layCabecalhoItens: TLayout;
     layDesc: TLayout;
     Label2: TLabel;
     layUni: TLayout;
@@ -30,16 +31,43 @@ type
     Label6: TLabel;
     ActionList1: TActionList;
     ListView1: TListView;
-    Layout4: TLayout;
+    layButtons: TLayout;
     Rectangle1: TRectangle;
     Rectangle2: TRectangle;
-    Button1: TButton;
-    Image2: TImage;
+    StyleBook1: TStyleBook;
+    imgBgList: TImage;
+    Rectangle3: TRectangle;
+    btnAddProd: TSpeedButton;
+    recAddProd: TRectangle;
+    lblAddProd: TLabel;
+    Layout5: TLayout;
+    Layout6: TLayout;
+    btncancelar: TSpeedButton;
+    recCancelar: TRectangle;
+    Label7: TLabel;
+    Layout7: TLayout;
+    Layout1: TLayout;
+    Layout4: TLayout;
+    Layout8: TLayout;
+    Layout9: TLayout;
+    Label8: TLabel;
+    Edit1: TEdit;
+    Label9: TLabel;
+    ComboBox1: TComboBox;
+    Rectangle4: TRectangle;
+    Rectangle5: TRectangle;
+    Label10: TLabel;
+    Memo1: TMemo;
+    Rectangle6: TRectangle;
+    Layout10: TLayout;
+    Label11: TLabel;
+    lblNrPedido: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure ListView1UpdateObjects(const Sender: TObject;
       const AItem: TListViewItem);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure btnAddProdClick(Sender: TObject);
   private
     { Private declarations }
     FBmpCinza, FBmpBranco: TBitmap;
@@ -95,9 +123,22 @@ begin
     // Formata os números para o padrão de dinheiro (Ex: 10,00)
     Item.Data['txtVlUni']   := FormatFloat(',0.00', AVlUnitario);
     Item.Data['txtVlTotal'] := FormatFloat(',0.00', VlTotal);
+    Item.Data['line'] := '--------------------------------------------------------------';
   finally
     ListView1.EndUpdate;
   end;
+end;
+
+procedure TfrmBalcao.btnAddProdClick(Sender: TObject);
+begin
+  // 1. Verifica se a tela de pesquisa já existe na memória
+  if not Assigned(frmPesquisaProduto) then
+    Application.CreateForm(TfrmPesquisaProduto, frmPesquisaProduto);
+
+  // 2. Abre a tela de pesquisa por cima do balcão
+  frmPesquisaProduto.Show;
+  frmPesquisaProduto.EditBusca.Text := '';
+  frmPesquisaProduto.ListViewResultados.Items.Clear;
 end;
 
 procedure TfrmBalcao.Button1Click(Sender: TObject);
