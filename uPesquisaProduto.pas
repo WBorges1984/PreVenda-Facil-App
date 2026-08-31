@@ -50,8 +50,8 @@ var
   I: Integer;
   Item: TListViewItem;
 begin
-  Client := TRESTClient.Create('http://192.168.100.7:9000/produtos');
-  //Client := TRESTClient.Create('http://10.1.1.111:9000/produtos');
+  //Client := TRESTClient.Create('http://192.168.100.7:9000/produtos');
+  Client := TRESTClient.Create('http://10.1.1.107:9000/produtos');
   Request := TRESTRequest.Create(nil);
   Response := TRESTResponse.Create(nil);
 

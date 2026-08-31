@@ -8,7 +8,7 @@ uses
   FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView.Types,
   FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
   System.Actions, FMX.ActnList, FMX.ListBox, FMX.Edit, FMX.Memo.Types,
-  FMX.ScrollBox, FMX.Memo;
+  FMX.ScrollBox, FMX.Memo, System.Math.Vectors, FMX.Controls3D, FMX.Layers3D;
 
 type
   TfrmBalcao = class(TForm)
@@ -62,6 +62,25 @@ type
     Layout10: TLayout;
     Label11: TLabel;
     lblNrPedido: TLabel;
+    Layout11: TLayout;
+    Layout12: TLayout;
+    Layout13: TLayout;
+    Layout3D1: TLayout3D;
+    Layout14: TLayout;
+    Label13: TLabel;
+    Layout15: TLayout;
+    lblSubTotal: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    lblTotAcrescimo: TLabel;
+    lblTotDesconto: TLabel;
+    Label12: TLabel;
+    Rectangle7: TRectangle;
+    lblTotal: TLabel;
+    Layout16: TLayout;
+    btnFinalizar: TSpeedButton;
+    Rectangle8: TRectangle;
+    lblFinalizar: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure ListView1UpdateObjects(const Sender: TObject;
       const AItem: TListViewItem);
