@@ -8,7 +8,7 @@ uses
   FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView.Types,
   FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView,
   System.Actions, FMX.ActnList, FMX.ListBox, FMX.Edit, FMX.Memo.Types,
-  FMX.ScrollBox, FMX.Memo, System.Math.Vectors, FMX.Controls3D, FMX.Layers3D;
+  FMX.ScrollBox, FMX.Memo, System.Math.Vectors, FMX.Controls3D, FMX.Layers3D,FMX.ListView.DynamicAppearance;
 
 type
   TfrmBalcao = class(TForm)
@@ -18,21 +18,9 @@ type
     Image1: TImage;
     Label1: TLabel;
     layContent: TLayout;
-    layCabecalhoItens: TLayout;
-    layDesc: TLayout;
-    Label2: TLabel;
-    layUni: TLayout;
-    Label3: TLabel;
-    layVlUni: TLayout;
-    Label4: TLabel;
-    layTot: TLayout;
-    Label5: TLabel;
-    layQTD: TLayout;
-    Label6: TLabel;
     ActionList1: TActionList;
     ListView1: TListView;
     layButtons: TLayout;
-    Rectangle1: TRectangle;
     Rectangle2: TRectangle;
     StyleBook1: TStyleBook;
     imgBgList: TImage;
@@ -81,12 +69,29 @@ type
     btnFinalizar: TSpeedButton;
     Rectangle8: TRectangle;
     lblFinalizar: TLabel;
+    GridPanelLayout1: TGridPanelLayout;
+    Rectangle9: TRectangle;
+    Layout17: TLayout;
+    Label16: TLabel;
+    Rectangle10: TRectangle;
+    Layout18: TLayout;
+    Label17: TLabel;
+    Rectangle11: TRectangle;
+    Layout19: TLayout;
+    Label18: TLabel;
+    Rectangle12: TRectangle;
+    Layout20: TLayout;
+    Label19: TLabel;
+    Rectangle13: TRectangle;
+    Layout21: TLayout;
+    Label20: TLabel;
     procedure Button1Click(Sender: TObject);
-    procedure ListView1UpdateObjects(const Sender: TObject;
-      const AItem: TListViewItem);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnAddProdClick(Sender: TObject);
+    procedure ListView1Resize(Sender: TObject);
+    procedure ListView1UpdateObjects(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     FBmpCinza, FBmpBranco: TBitmap;
@@ -103,6 +108,26 @@ implementation
 {$R *.fmx}
 
 uses uLogin, uPesquisaProduto;
+
+function GetAppearanceTextObject(AListView: TListView; const AName: string): TTextObjectAppearance;
+var
+  DynApp: TDynamicAppearance;
+  AppObj: TCollectionItem;
+begin
+  Result := nil;
+  if AListView.ItemAppearance.ItemAppearance = 'DynamicAppearance' then
+  begin
+    DynApp := TDynamicAppearance(AListView.ItemAppearanceObjects.ItemObjects);
+    for AppObj in DynApp.ObjectsCollection do
+      if (AppObj is TAppearanceObjectItem) and
+         (TAppearanceObjectItem(AppObj).AppearanceObjectName = AName) and
+         (TAppearanceObjectItem(AppObj).Appearance is TTextObjectAppearance) then
+      begin
+        Result := TTextObjectAppearance(TAppearanceObjectItem(AppObj).Appearance);
+        Break;
+      end;
+  end;
+end;
 
 procedure TfrmBalcao.FormCreate(Sender: TObject);
 begin
@@ -172,19 +197,44 @@ begin
   frmPesquisaProduto.ListViewResultados.Items.Clear;
 end;
 
-procedure TfrmBalcao.ListView1UpdateObjects(const Sender: TObject;
-  const AItem: TListViewItem);
-var
-  Fundo: TListItemImage;
+
+
+procedure TfrmBalcao.ListView1Resize(Sender: TObject);
 begin
-  Fundo := TListItemImage(AItem.Objects.FindDrawable('bgFundo'));
-  if Assigned(Fundo) then
+   if ListView1.Width <= 0 then Exit;
+      ListView1.BeginUpdate;
+      ListView1.EndUpdate;
+end;
+
+
+
+procedure TfrmBalcao.ListView1UpdateObjects(const Sender: TObject; const AItem: TListViewItem);
+var
+  LWidth: Single;
+  TDesc, TUn, TQtd, TVlUni, TVlTotal: TListItemText;
+begin
+  LWidth := ListView1.Width;
+  if LWidth <= 0 then Exit;
+
+  TDesc    := AItem.Objects.FindObjectT<TListItemText>('txtDesc');
+  TUn      := AItem.Objects.FindObjectT<TListItemText>('txtUn');
+  TQtd     := AItem.Objects.FindObjectT<TListItemText>('txtQtd');
+  TVlUni   := AItem.Objects.FindObjectT<TListItemText>('txtVlUni');
+  TVlTotal := AItem.Objects.FindObjectT<TListItemText>('txtVlTotal');
+
+  if Assigned(TDesc) and Assigned(TUn) and Assigned(TQtd) and Assigned(TVlUni) and Assigned(TVlTotal) then
   begin
-    Fundo.ScalingMode := TImageScalingMode.Stretch;
-    if Odd(AItem.Index) then
-      Fundo.Bitmap := FBmpCinza
-    else
-      Fundo.Bitmap := FBmpBranco;
+    TDesc.Width    := LWidth * 0.40;
+    TUn.Width      := LWidth * 0.10;
+    TQtd.Width     := LWidth * 0.15;
+    TVlUni.Width   := LWidth * 0.15;
+    TVlTotal.Width := LWidth * 0.20;
+
+    TDesc.PlaceOffset.X    := 0;
+    TUn.PlaceOffset.X      := TDesc.PlaceOffset.X + TDesc.Width;
+    TQtd.PlaceOffset.X     := TUn.PlaceOffset.X + TUn.Width;
+    TVlUni.PlaceOffset.X   := TQtd.PlaceOffset.X + TQtd.Width;
+    TVlTotal.PlaceOffset.X := TVlUni.PlaceOffset.X + TVlUni.Width;
   end;
 end;
 
