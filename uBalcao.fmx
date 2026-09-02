@@ -3,7 +3,7 @@ object frmBalcao: TfrmBalcao
   Top = 0
   Caption = 'Form2'
   ClientHeight = 688
-  ClientWidth = 348
+  ClientWidth = 340
   Fill.Kind = Solid
   Position = ScreenCenter
   StyleBook = StyleBook1
@@ -15,14 +15,14 @@ object frmBalcao: TfrmBalcao
   DesignerMasterStyle = 0
   object layTop: TLayout
     Align = Top
-    Size.Width = 348.000000000000000000
+    Size.Width = 340.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object Rectangle2: TRectangle
       Align = Contents
       Fill.Color = xFF65A0E7
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
     end
@@ -933,14 +933,14 @@ object frmBalcao: TfrmBalcao
     end
     object Layout3: TLayout
       Align = Client
-      Size.Width = 293.000000000000000000
+      Size.Width = 285.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object Label1: TLabel
         Align = Client
         StyledSettings = []
-        Size.Width = 293.000000000000000000
+        Size.Width = 285.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Family = 'Roboto'
@@ -955,98 +955,133 @@ object frmBalcao: TfrmBalcao
   end
   object layContent: TLayout
     Align = Client
-    Size.Width = 348.000000000000000000
+    Size.Width = 340.000000000000000000
     Size.Height = 638.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object layButtons: TLayout
       Align = Top
       Position.Y = 266.000000000000000000
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 74.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object Rectangle3: TRectangle
         Align = Contents
         Fill.Color = xFFEDEDED
-        Size.Width = 348.000000000000000000
+        Size.Width = 340.000000000000000000
         Size.Height = 74.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-      end
-      object Layout5: TLayout
-        Align = Left
-        Size.Width = 172.000000000000000000
-        Size.Height = 74.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        object btnAddProd: TSpeedButton
-          Align = Center
-          Size.Width = 121.000000000000000000
-          Size.Height = 30.000000000000000000
+        object Layout22: TLayout
+          Align = Client
+          Size.Width = 340.000000000000000000
+          Size.Height = 74.000000000000000000
           Size.PlatformDefault = False
-          OnClick = btnAddProdClick
-          object recAddProd: TRectangle
-            Align = Client
-            Fill.Color = xFF285B82
-            HitTest = False
-            Size.Width = 121.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 5.000000000000000000
-            YRadius = 5.000000000000000000
-          end
-          object lblAddProd: TLabel
-            Align = Client
-            StyledSettings = [Size]
-            Size.Width = 121.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Family = 'Roboto'
-            TextSettings.Font.StyleExt = {00070000000000000004000000}
-            TextSettings.FontColor = claWhite
-            TextSettings.HorzAlign = Center
-            Text = 'Adicionar Produtos'
-            TabOrder = 7
-          end
+          TabOrder = 0
         end
-      end
-      object Layout6: TLayout
-        Align = Right
-        Position.X = 180.000000000000000000
-        Size.Width = 168.000000000000000000
-        Size.Height = 74.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        object btncancelar: TSpeedButton
-          Align = Center
-          Size.Width = 121.000000000000000000
-          Size.Height = 30.000000000000000000
+        object GridPanelLayout2: TGridPanelLayout
+          Align = Contents
+          Size.Width = 340.000000000000000000
+          Size.Height = 74.000000000000000000
           Size.PlatformDefault = False
-          object recCancelar: TRectangle
-            Align = Client
-            Fill.Color = xFF822828
-            HitTest = False
-            Size.Width = 121.000000000000000000
-            Size.Height = 30.000000000000000000
+          TabOrder = 1
+          ColumnCollection = <
+            item
+              Value = 50.000000000000000000
+            end
+            item
+              Value = 50.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Layout5
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = Layout6
+              Row = 0
+            end>
+          RowCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          object Layout5: TLayout
+            Align = Center
+            Size.Width = 145.000000000000000000
+            Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 5.000000000000000000
-            YRadius = 5.000000000000000000
+            TabOrder = 1
+            object btnAddProd: TSpeedButton
+              Align = Center
+              Size.Width = 121.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              OnClick = btnAddProdClick
+              object recAddProd: TRectangle
+                Align = Client
+                Fill.Color = xFF285B82
+                HitTest = False
+                Size.Width = 121.000000000000000000
+                Size.Height = 30.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 5.000000000000000000
+                YRadius = 5.000000000000000000
+              end
+              object lblAddProd: TLabel
+                Align = Client
+                StyledSettings = [Size]
+                Size.Width = 121.000000000000000000
+                Size.Height = 30.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Family = 'Roboto'
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claWhite
+                TextSettings.HorzAlign = Center
+                Text = 'Adicionar Produtos'
+                TabOrder = 7
+              end
+            end
           end
-          object Label7: TLabel
-            Align = Client
-            StyledSettings = [Size]
-            Size.Width = 121.000000000000000000
-            Size.Height = 30.000000000000000000
+          object Layout6: TLayout
+            Align = Center
+            Size.Width = 145.000000000000000000
+            Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Family = 'Roboto'
-            TextSettings.Font.StyleExt = {00070000000000000004000000}
-            TextSettings.FontColor = claWhite
-            TextSettings.HorzAlign = Center
-            Text = 'Cancelar'
-            TabOrder = 7
+            TabOrder = 0
+            object btncancelar: TSpeedButton
+              Align = Center
+              Size.Width = 121.000000000000000000
+              Size.Height = 30.000000000000000000
+              Size.PlatformDefault = False
+              object recCancelar: TRectangle
+                Align = Client
+                Fill.Color = xFF822828
+                HitTest = False
+                Size.Width = 121.000000000000000000
+                Size.Height = 30.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 5.000000000000000000
+                YRadius = 5.000000000000000000
+              end
+              object Label7: TLabel
+                Align = Client
+                StyledSettings = [Size]
+                Size.Width = 121.000000000000000000
+                Size.Height = 30.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Family = 'Roboto'
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claWhite
+                TextSettings.HorzAlign = Center
+                Text = 'Cancelar'
+                TabOrder = 7
+              end
+            end
           end
         end
       end
@@ -1060,7 +1095,7 @@ object frmBalcao: TfrmBalcao
       Transparent = True
       Align = Top
       Position.Y = 33.000000000000000000
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 233.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -2121,7 +2156,7 @@ object frmBalcao: TfrmBalcao
               '\cestaVazia.png'
           end>
         Align = Contents
-        Size.Width = 348.000000000000000000
+        Size.Width = 340.000000000000000000
         Size.Height = 233.000000000000000000
         Size.PlatformDefault = False
       end
@@ -2133,7 +2168,7 @@ object frmBalcao: TfrmBalcao
       Padding.Right = 5.000000000000000000
       Padding.Bottom = 5.000000000000000000
       Position.Y = 340.000000000000000000
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 133.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
@@ -2249,7 +2284,7 @@ object frmBalcao: TfrmBalcao
         Padding.Top = 5.000000000000000000
         Padding.Right = 5.000000000000000000
         Padding.Bottom = 5.000000000000000000
-        Position.X = 183.000000000000000000
+        Position.X = 175.000000000000000000
         Position.Y = 5.000000000000000000
         Size.Width = 160.000000000000000000
         Size.Height = 123.000000000000000000
@@ -2301,7 +2336,7 @@ object frmBalcao: TfrmBalcao
     object Layout10: TLayout
       Align = Top
       Position.Y = 473.000000000000000000
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
@@ -2334,7 +2369,7 @@ object frmBalcao: TfrmBalcao
     object Layout11: TLayout
       Align = Top
       Position.Y = 505.000000000000000000
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 88.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -2440,7 +2475,7 @@ object frmBalcao: TfrmBalcao
       end
       object Layout13: TLayout
         Align = Right
-        Position.X = 180.000000000000000000
+        Position.X = 172.000000000000000000
         Size.Width = 168.000000000000000000
         Size.Height = 88.000000000000000000
         Size.PlatformDefault = False
@@ -2522,7 +2557,7 @@ object frmBalcao: TfrmBalcao
     end
     object GridPanelLayout1: TGridPanelLayout
       Align = Top
-      Size.Width = 348.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
@@ -2575,20 +2610,20 @@ object frmBalcao: TfrmBalcao
       object Rectangle9: TRectangle
         Align = Contents
         Fill.Color = xFF00326E
-        Size.Width = 137.763946533203100000
+        Size.Width = 134.596954345703100000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Layout17: TLayout
           Align = Client
-          Size.Width = 137.763946533203100000
+          Size.Width = 134.596954345703100000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           object Label16: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 137.763946533203100000
+            Size.Width = 134.596954345703100000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -2601,20 +2636,20 @@ object frmBalcao: TfrmBalcao
       object Rectangle10: TRectangle
         Align = Client
         Fill.Color = xFF00326E
-        Size.Width = 34.045745849609380000
+        Size.Width = 33.263092041015630000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Layout18: TLayout
           Align = Client
-          Size.Width = 34.045745849609380000
+          Size.Width = 33.263092041015630000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object Label17: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 34.045745849609380000
+            Size.Width = 33.263092041015630000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -2627,20 +2662,20 @@ object frmBalcao: TfrmBalcao
       object Rectangle11: TRectangle
         Align = Client
         Fill.Color = xFF00326E
-        Size.Width = 35.000137329101560000
+        Size.Width = 34.195526123046880000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Layout19: TLayout
           Align = Client
-          Size.Width = 35.000137329101560000
+          Size.Width = 34.195526123046880000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object Label18: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 35.000137329101560000
+            Size.Width = 34.195526123046880000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -2653,20 +2688,20 @@ object frmBalcao: TfrmBalcao
       object Rectangle12: TRectangle
         Align = Client
         Fill.Color = xFF00326E
-        Size.Width = 71.590164184570310000
+        Size.Width = 69.944427490234380000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Layout20: TLayout
           Align = Client
-          Size.Width = 71.590164184570310000
+          Size.Width = 69.944427490234380000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object Label19: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 71.590164184570310000
+            Size.Width = 69.944427490234380000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -2679,20 +2714,20 @@ object frmBalcao: TfrmBalcao
       object Rectangle13: TRectangle
         Align = Client
         Fill.Color = xFF00326E
-        Size.Width = 69.600006103515630000
+        Size.Width = 68.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Layout21: TLayout
           Align = Client
-          Size.Width = 69.600006103515630000
+          Size.Width = 68.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object Label20: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 69.600006103515630000
+            Size.Width = 68.000000000000000000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -3076,7 +3111,7 @@ object frmBalcao: TfrmBalcao
       end>
   end
   object ActionList1: TActionList
-    Left = 568
-    Top = 304
+    Left = 592
+    Top = 232
   end
 end
