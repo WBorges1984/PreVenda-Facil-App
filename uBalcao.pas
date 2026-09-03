@@ -26,37 +26,10 @@ type
     imgBgList: TImage;
     Rectangle3: TRectangle;
     Layout7: TLayout;
-    Layout1: TLayout;
-    Layout4: TLayout;
-    Layout8: TLayout;
-    Layout9: TLayout;
-    Label8: TLabel;
-    Edit1: TEdit;
-    Label9: TLabel;
-    ComboBox1: TComboBox;
-    Rectangle4: TRectangle;
-    Rectangle5: TRectangle;
-    Label10: TLabel;
-    Memo1: TMemo;
-    Rectangle6: TRectangle;
     Layout10: TLayout;
     Label11: TLabel;
     lblNrPedido: TLabel;
-    Layout11: TLayout;
-    Layout12: TLayout;
-    Layout13: TLayout;
-    Layout3D1: TLayout3D;
-    Layout14: TLayout;
-    Label13: TLabel;
-    Layout15: TLayout;
-    lblSubTotal: TLabel;
-    Label14: TLabel;
-    Label15: TLabel;
-    lblTotAcrescimo: TLabel;
-    lblTotDesconto: TLabel;
-    Label12: TLabel;
-    Rectangle7: TRectangle;
-    lblTotal: TLabel;
+    laySubtotal: TLayout;
     Layout16: TLayout;
     btnFinalizar: TSpeedButton;
     Rectangle8: TRectangle;
@@ -87,6 +60,35 @@ type
     btncancelar: TSpeedButton;
     recCancelar: TRectangle;
     Label7: TLabel;
+    GridPanelLayout3: TGridPanelLayout;
+    Layout1: TLayout;
+    Layout8: TLayout;
+    Rectangle4: TRectangle;
+    Label8: TLabel;
+    Edit1: TEdit;
+    Layout9: TLayout;
+    Rectangle5: TRectangle;
+    Label9: TLabel;
+    ComboBox1: TComboBox;
+    Layout4: TLayout;
+    Label10: TLabel;
+    Memo1: TMemo;
+    Rectangle6: TRectangle;
+    GridPanelLayout4: TGridPanelLayout;
+    Layout12: TLayout;
+    Layout3D1: TLayout3D;
+    Layout14: TLayout;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Layout15: TLayout;
+    lblSubTotal: TLabel;
+    lblTotAcrescimo: TLabel;
+    lblTotDesconto: TLabel;
+    Layout13: TLayout;
+    Rectangle7: TRectangle;
+    Label12: TLabel;
+    lblTotal: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -108,6 +110,11 @@ var
 implementation
 
 {$R *.fmx}
+{$R *.Moto360.fmx ANDROID}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.Windows.fmx MSWINDOWS}
+{$R *.XLgXhdpiTb.fmx ANDROID}
 
 uses uLogin, uPesquisaProduto;
 

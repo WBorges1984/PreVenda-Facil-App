@@ -1,0 +1,121 @@
+inherited frmBalcao_Windows: TfrmBalcao_Windows
+  DesignerMasterStyle = 3
+  inherited layTop: TLayout
+    inherited Layout2: TLayout
+      inherited Image1: TImage
+        MultiResBitmap.Height = 198
+        MultiResBitmap.Width = 228
+      end
+    end
+    inherited Layout3: TLayout
+      inherited Label1: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+  inherited layContent: TLayout
+    inherited layButtons: TLayout
+      inherited Rectangle3: TRectangle
+        inherited GridPanelLayout2: TGridPanelLayout
+          inherited Layout5: TLayout
+            inherited btnAddProd: TSpeedButton
+              inherited lblAddProd: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+          inherited Layout6: TLayout
+            inherited btncancelar: TSpeedButton
+              inherited Label7: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+      end
+    end
+    inherited ListView1: TListView
+      inherited imgBgList: TImage
+        MultiResBitmap.Height = 278
+      end
+    end
+    inherited Layout7: TLayout
+      inherited GridPanelLayout3: TGridPanelLayout
+        inherited Layout1: TLayout
+          inherited Layout8: TLayout
+            inherited Label8: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+          inherited Layout9: TLayout
+            inherited Label9: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+        inherited Layout4: TLayout
+          inherited Label10: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited Memo1: TMemo
+            Viewport.Width = 161.000000000000000000
+            Viewport.Height = 91.000000000000000000
+          end
+        end
+      end
+    end
+    inherited Layout10: TLayout
+      inherited Label11: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited lblNrPedido: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited laySubtotal: TLayout
+      inherited GridPanelLayout4: TGridPanelLayout
+        inherited Layout12: TLayout
+          inherited Layout14: TLayout
+            inherited Label13: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Label14: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Label15: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+          inherited Layout15: TLayout
+            inherited lblSubTotal: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotAcrescimo: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotDesconto: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+        inherited Layout13: TLayout
+          inherited Rectangle7: TRectangle
+            inherited Label12: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotal: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+    end
+    inherited Layout16: TLayout
+      inherited btnFinalizar: TSpeedButton
+        inherited lblFinalizar: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+end

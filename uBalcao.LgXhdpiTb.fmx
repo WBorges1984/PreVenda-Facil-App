@@ -1,0 +1,220 @@
+inherited frmBalcao_LgXhdpiTb: TfrmBalcao_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited layTop: TLayout
+    Size.Width = 480.000000000000000000
+    inherited Rectangle2: TRectangle
+      Size.Width = 480.000000000000000000
+    end
+    inherited Layout2: TLayout
+      inherited Image1: TImage
+        MultiResBitmap.Height = 198
+        MultiResBitmap.Width = 228
+      end
+    end
+    inherited Layout3: TLayout
+      Size.Width = 425.000000000000000000
+      inherited Label1: TLabel
+        Size.Width = 425.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+  inherited layContent: TLayout
+    Size.Width = 480.000000000000000000
+    Size.Height = 779.000000000000000000
+    inherited layButtons: TLayout
+      Size.Width = 480.000000000000000000
+      inherited Rectangle3: TRectangle
+        Size.Width = 480.000000000000000000
+        inherited Layout22: TLayout
+          Size.Width = 480.000000000000000000
+        end
+        inherited GridPanelLayout2: TGridPanelLayout
+          Size.Width = 480.000000000000000000
+          inherited Layout5: TLayout
+            inherited btnAddProd: TSpeedButton
+              inherited lblAddProd: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+          inherited Layout6: TLayout
+            inherited btncancelar: TSpeedButton
+              inherited Label7: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+      end
+    end
+    inherited ListView1: TListView
+      Size.Width = 480.000000000000000000
+      inherited imgBgList: TImage
+        MultiResBitmap.Height = 278
+        Size.Width = 480.000000000000000000
+      end
+    end
+    inherited Layout7: TLayout
+      Size.Width = 480.000000000000000000
+      inherited GridPanelLayout3: TGridPanelLayout
+        Size.Width = 470.000000000000000000
+        inherited Layout1: TLayout
+          Size.Width = 235.000000000000000000
+          inherited Layout8: TLayout
+            Size.Width = 235.000000000000000000
+            inherited Rectangle4: TRectangle
+              Size.Width = 235.000000000000000000
+            end
+            inherited Label8: TLabel
+              Size.Width = 230.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Edit1: TEdit
+              Size.Width = 225.000000000000000000
+            end
+          end
+          inherited Layout9: TLayout
+            Size.Width = 235.000000000000000000
+            inherited Rectangle5: TRectangle
+              Size.Width = 235.000000000000000000
+            end
+            inherited Label9: TLabel
+              Size.Width = 230.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited ComboBox1: TComboBox
+              Size.Width = 225.000000000000000000
+            end
+          end
+        end
+        inherited Layout4: TLayout
+          Size.Width = 235.000000000000000000
+          inherited Label10: TLabel
+            Size.Width = 220.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited Memo1: TMemo
+            Size.Width = 225.000000000000000000
+            Viewport.Width = 225.000000000000000000
+            Viewport.Height = 91.000000000000000000
+          end
+          inherited Rectangle6: TRectangle
+            Size.Width = 235.000000000000000000
+          end
+        end
+      end
+    end
+    inherited Layout10: TLayout
+      Size.Width = 480.000000000000000000
+      inherited Label11: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited lblNrPedido: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited laySubtotal: TLayout
+      Size.Width = 480.000000000000000000
+      inherited GridPanelLayout4: TGridPanelLayout
+        Size.Width = 480.000000000000000000
+        inherited Layout12: TLayout
+          Size.Width = 240.000000000000000000
+          inherited Layout14: TLayout
+            inherited Label13: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Label14: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Label15: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+          inherited Layout15: TLayout
+            inherited lblSubTotal: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotAcrescimo: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotDesconto: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+        inherited Layout13: TLayout
+          Size.Width = 240.000000000000000000
+          inherited Rectangle7: TRectangle
+            Size.Width = 240.000000000000000000
+            inherited Label12: TLabel
+              Size.Width = 240.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited lblTotal: TLabel
+              Size.Width = 240.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+    end
+    inherited Layout16: TLayout
+      inherited btnFinalizar: TSpeedButton
+        inherited lblFinalizar: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inherited GridPanelLayout1: TGridPanelLayout
+      Size.Width = 480.000000000000000000
+      inherited Rectangle9: TRectangle
+        Size.Width = 190.019241333007800000
+        inherited Layout17: TLayout
+          Size.Width = 190.019241333007800000
+          inherited Label16: TLabel
+            Size.Width = 190.019241333007800000
+          end
+        end
+      end
+      inherited Rectangle10: TRectangle
+        Size.Width = 46.959655761718750000
+        inherited Layout18: TLayout
+          Size.Width = 46.959655761718750000
+          inherited Label17: TLabel
+            Size.Width = 46.959655761718750000
+          end
+        end
+      end
+      inherited Rectangle11: TRectangle
+        Size.Width = 48.276046752929690000
+        inherited Layout19: TLayout
+          Size.Width = 48.276046752929690000
+          inherited Label18: TLabel
+            Size.Width = 48.276046752929690000
+          end
+        end
+      end
+      inherited Rectangle12: TRectangle
+        Size.Width = 98.745056152343750000
+        inherited Layout20: TLayout
+          Size.Width = 98.745056152343750000
+          inherited Label19: TLabel
+            Size.Width = 98.745056152343750000
+          end
+        end
+      end
+      inherited Rectangle13: TRectangle
+        Size.Width = 96.000000000000000000
+        inherited Layout21: TLayout
+          Size.Width = 96.000000000000000000
+          inherited Label20: TLabel
+            Size.Width = 96.000000000000000000
+          end
+        end
+      end
+    end
+  end
+end
